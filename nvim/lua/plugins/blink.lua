@@ -1,0 +1,63 @@
+return {
+	"saghen/blink.cmp",
+	event = "VimEnter",
+	version = "1.*",
+	dependencies = {
+		-- {
+		-- 	'L3MON4D3/LuaSnip',
+		-- 	version = '2.*',
+		-- 	build = (function()
+		-- 		-- Build Step is needed for regex support in snippets.
+		-- 		-- This step is not supported in many windows environments.
+		-- 		-- Remove the below condition to re-enable on windows.
+		-- 		if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+		-- 			return
+		-- 		end
+		-- 		return 'make install_jsregexp'
+		-- 	end)(),
+		-- 	opts = {},
+		-- },
+		{
+			-- https://github.com/folke/lazydev.nvim/issues/114
+			"Jari27/lazydev.nvim",
+			branch = "deprecate_client_notify",
+			ft = "lua",
+			opts = {
+				library = {
+					{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+				},
+			},
+		},
+	},
+	--- @module 'blink.cmp'
+	--- @type blink.cmp.Config
+	opts = {
+		keymap = {
+			preset = "default",
+			["<C-u>"] = { "scroll_documentation_up", "fallback" },
+			["<C-d>"] = { "scroll_documentation_down", "fallback" },
+			["<Tab>"] = {},
+		},
+		completion = {
+			documentation = { auto_show = true, auto_show_delay_ms = 300 },
+		},
+		sources = {
+			default = { "lsp", "path", "snippets", "lazydev" },
+			providers = {
+				lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+				snippets = { score_offset = -50 },
+				path = { score_offset = -10 },
+			},
+		},
+		-- snippets = { preset = 'luasnip' },
+		fuzzy = {
+			implementation = "prefer_rust",
+		},
+		signature = {
+			enabled = true,
+			-- trigger = {
+			--   show_on_insert = true,
+			-- },
+		},
+	},
+}

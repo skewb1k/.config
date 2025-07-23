@@ -1,0 +1,6 @@
+require("config.options")
+require("config.lazy")
+require("config.lsp")
+require("config.autocmds")
+require("config.mappings")
+require("config.registers")
