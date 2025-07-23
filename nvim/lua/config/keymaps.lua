@@ -45,3 +45,5 @@ map("", "<leader>l", require("lazy").home)
 
 map("", "<A-n>", exec("silent! cn"))
 map("", "<A-p>", exec("silent! cp"))
+
+map("", "gd", '<C-]>')

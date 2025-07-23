@@ -5,9 +5,11 @@ return {
 	---@type snacks.Config
 	opts = {
 		picker = {
-			ui_select = true,
 			sources = {
-				files = { hidden = true },
+				files = {
+					hidden = true,
+					follow = true,
+				},
 			},
 			icons = {
 				files = {
@@ -33,12 +35,6 @@ return {
 			end,
 		},
 		{
-			"<leader>b",
-			function()
-				Snacks.picker.buffers()
-			end,
-		},
-		{
 			"<leader>sg",
 			function()
 				Snacks.picker.grep()
@@ -53,32 +49,7 @@ return {
 		{
 			"<leader>sn",
 			function()
-				Snacks.picker.notifications()
-			end,
-		},
-		-- {
-		--   '<leader>e',
-		--   function()
-		--     Snacks.explorer()
-		--   end,
-		-- },
-		-- find
-		{
-			"<leader>sn",
-			function()
 				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-			end,
-		},
-		{
-			"<leader>sf",
-			function()
-				Snacks.picker.files()
-			end,
-		},
-		{
-			"<leader>sg",
-			function()
-				Snacks.picker.git_files()
 			end,
 		},
 		{
@@ -95,12 +66,6 @@ return {
 			end,
 		},
 		{
-			"<leader>gl",
-			function()
-				Snacks.picker.git_log()
-			end,
-		},
-		{
 			"<leader>gL",
 			function()
 				Snacks.picker.git_log_line()
@@ -109,25 +74,7 @@ return {
 		{
 			"<leader>gs",
 			function()
-				Snacks.picker.git_status()
-			end,
-		},
-		{
-			"<leader>gS",
-			function()
-				Snacks.picker.git_stash()
-			end,
-		},
-		{
-			"<leader>gD",
-			function()
 				Snacks.picker.git_diff()
-			end,
-		},
-		{
-			"<leader>gf",
-			function()
-				Snacks.picker.git_log_file()
 			end,
 		},
 		-- Grep
@@ -135,12 +82,6 @@ return {
 			"<leader>/",
 			function()
 				Snacks.picker.lines()
-			end,
-		},
-		{
-			"<leader>sg",
-			function()
-				Snacks.picker.grep()
 			end,
 		},
 		{
@@ -199,12 +140,6 @@ return {
 			end,
 		},
 		{
-			"<leader>sl",
-			function()
-				Snacks.picker.loclist()
-			end,
-		},
-		{
 			"<leader>sm",
 			function()
 				Snacks.picker.man()
@@ -217,48 +152,48 @@ return {
 			end,
 		},
 		-- LSP
-		{
-			"gd",
-			function()
-				Snacks.picker.lsp_definitions({ include_current = true })
-			end,
-		},
-		{
-			"gD",
-			function()
-				Snacks.picker.lsp_declarations()
-			end,
-		},
-		{
-			"gr",
-			function()
-				Snacks.picker.lsp_references({ include_current = true })
-			end,
-			nowait = true,
-		},
-		{
-			"gi",
-			function()
-				Snacks.picker.lsp_implementations({ include_current = true })
-			end,
-		},
-		{
-			"gy",
-			function()
-				Snacks.picker.lsp_type_definitions({ include_current = true })
-			end,
-		},
-		{
-			"<leader>ss",
-			function()
-				Snacks.picker.lsp_symbols()
-			end,
-		},
-		{
-			"<leader>sS",
-			function()
-				Snacks.picker.lsp_workspace_symbols()
-			end,
-		},
+		-- {
+		-- 	"gd",
+		-- 	function()
+		-- 		Snacks.picker.lsp_definitions({ include_current = true })
+		-- 	end,
+		-- },
+		-- {
+		-- 	"gD",
+		-- 	function()
+		-- 		Snacks.picker.lsp_declarations()
+		-- 	end,
+		-- },
+		-- {
+		-- 	"gr",
+		-- 	function()
+		-- 		Snacks.picker.lsp_references({ include_current = true })
+		-- 	end,
+		-- 	nowait = true,
+		-- },
+		-- {
+		-- 	"gi",
+		-- 	function()
+		-- 		Snacks.picker.lsp_implementations({ include_current = true })
+		-- 	end,
+		-- },
+		-- {
+		-- 	"gy",
+		-- 	function()
+		-- 		Snacks.picker.lsp_type_definitions({ include_current = true })
+		-- 	end,
+		-- },
+		-- {
+		-- 	"<leader>ss",
+		-- 	function()
+		-- 		Snacks.picker.lsp_symbols()
+		-- 	end,
+		-- },
+		-- {
+		-- 	"<leader>sS",
+		-- 	function()
+		-- 		Snacks.picker.lsp_workspace_symbols()
+		-- 	end,
+		-- },
 	},
 }

@@ -34,8 +34,6 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			["<C-u>"] = { "scroll_documentation_up", "fallback" },
-			["<C-d>"] = { "scroll_documentation_down", "fallback" },
 			["<Tab>"] = {},
 		},
 		completion = {
