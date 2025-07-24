@@ -1,3 +1,15 @@
+vim.diagnostic.config({
+	severity_sort = true,
+	float = { source = "if_many" },
+	underline = { severity = vim.diagnostic.severity.ERROR },
+	virtual_text = {
+		source = "if_many",
+		spacing = 2,
+	},
+})
+
+vim.lsp.semantic_tokens.enable(false)
+
 vim.lsp.enable({
 	"gopls",
 	"lua_ls",
@@ -11,14 +23,4 @@ vim.lsp.enable({
 	"clangd",
 	"basedpyright",
 	"taplo",
-})
-
-vim.diagnostic.config({
-	severity_sort = true,
-	float = { source = "if_many" },
-	underline = { severity = vim.diagnostic.severity.ERROR },
-	virtual_text = {
-		source = "if_many",
-		spacing = 2,
-	},
 })

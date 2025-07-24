@@ -24,7 +24,7 @@ map("", "<leader>p", '"+p')
 
 map("", "<leader>w", function()
 	vim.lsp.buf.format()
-	require("mini.trailspace").trim()
+	-- require("mini.trailspace").trim()
 	exec("w")
 end)
 

@@ -27,3 +27,9 @@ vim.o.inccommand = "split"
 vim.o.scrolloff = 4
 
 vim.o.confirm = true
+
+vim.g.netrw_banner = false
+vim.g.netrw_preview = 1
+
+vim.o.ignorecase = true
+vim.o.smartcase = true
