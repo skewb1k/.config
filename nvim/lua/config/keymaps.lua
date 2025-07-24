@@ -23,7 +23,7 @@ map("", "<leader>y", '"+y')
 map("", "<leader>p", '"+p')
 
 map("", "<leader>w", function()
-	vim.lsp.buf.format({ async = true })
+	vim.lsp.buf.format()
 	require("mini.trailspace").trim()
 	exec("w")
 end)
@@ -35,9 +35,6 @@ map("", "<C-s>", "m`")
 map("", "<leader>e", vim.diagnostic.open_float)
 
 map("", "<A-z>", exec("set wrap!"))
-
-map("", "gn", exec("bprev"))
-map("", "gp", exec("bnext"))
 
 map("", "<F5>", exec("LspRestart"))
 

@@ -2,6 +2,7 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
+	---@module "snacks"
 	---@type snacks.Config
 	opts = {
 		picker = {
@@ -50,6 +51,12 @@ return {
 			"<leader>sn",
 			function()
 				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+			end,
+		},
+		{
+			"<leader>b",
+			function()
+				Snacks.picker.buffers()
 			end,
 		},
 		{

@@ -3,10 +3,11 @@ return {
 	dir = "~/dev/vague.nvim",
 	lazy = false,
 	priority = 1000,
+	--- @type VagueColorscheme.InternalConfig
 	opts = {
 		italic = false,
 		on_highlights = function(highlights, _)
-			highlights.CursorLine = { bg = nil }
+			highlights.StatusLine = { bg = nil }
 		end,
 	},
 	-- config = function()

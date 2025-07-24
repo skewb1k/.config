@@ -18,8 +18,6 @@ ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
-source $ZDOTDIR/cfg.zsh
-
 source $ZDOTDIR/aliases.zsh
 
 setopt hist_ignore_all_dups

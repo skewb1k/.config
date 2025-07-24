@@ -2,7 +2,9 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
 	build = ":TSUpdate",
-	main = "nvim-treesitter.configs", -- Sets main module to use for opts
+	branch = "main",
+	---@module 'nvim-treesitter'
+	---@type TSConfig
 	opts = {
 		ensure_installed = {
 			"bash",
@@ -29,7 +31,6 @@ return {
 			"gitcommit",
 			"gitignore",
 		},
-		auto_install = true,
 		highlight = {
 			enable = true,
 		},

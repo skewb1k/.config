@@ -19,6 +19,7 @@ require("lazy").setup({
 	require("plugins.mini-diff"),
 	require("plugins.mini-trailspace"),
 	require("plugins.mini-move"),
+	-- require("plugins.mini"),
 	require("plugins.snacks"),
 	require("plugins.treesitter"),
 	require("plugins.treesitter-context"),
@@ -28,6 +29,13 @@ require("lazy").setup({
 	require("plugins.diffview"),
 	-- require 'plugins.todo-comments',
 	-- require 'plugins.kulala',
+
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 
 	{ "ngynkvn/gotmpl.nvim", opts = {} },
 	-- {

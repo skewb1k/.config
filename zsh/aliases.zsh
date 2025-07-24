@@ -3,7 +3,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"
 
-if [[ -n $ZSH_VERSION ]] && command -v eza >/dev/null 2>&1; then
+if command -v eza >/dev/null 2>&1; then
 	alias l="eza --icons"
 	alias la="eza -a --icons"
 	alias lt="eza -T --icons"
@@ -16,12 +16,6 @@ alias py="python3"
 alias task="go-task"
 
 alias nv="nvim ."
-
-alias nvimdiff="nvim -d"
-
-if [[ -n $ZSH_VERSION ]] && command -v nvim >/dev/null 2>&1; then
-	alias vimdiff='nvim -d'
-fi
 
 # yazi helper https://yazi-rs.github.io/docs/quick-start#shell-wrapper
 function y() {
@@ -59,8 +53,6 @@ alias fo='fzf --print0 | xargs -0 -o nvim'
 
 alias d="docker"
 alias dsp="docker system prune -af && docker volume prune -af"
-
-alias lsz="du -ahd 1 | sort -hr"
 
 alias g='gtrash'
 alias gm='g put'
