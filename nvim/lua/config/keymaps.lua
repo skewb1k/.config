@@ -21,26 +21,18 @@ map("", "<C-M-k>", exec("resize -2"))
 
 map("", "<leader>y", '"+y')
 map("", "<leader>p", '"+p')
+map("", "<leader>d", '"+d<CR>')
 
 map("", "<leader>w", function()
-	vim.lsp.buf.format()
 	-- require("mini.trailspace").trim()
-	exec("w")
+	vim.lsp.buf.format()
+	vim.cmd("write")
 end)
 
 map("", "<leader>u", exec("checktime"))
-
-map("", "<C-s>", "m`")
 
 map("", "<leader>e", vim.diagnostic.open_float)
 
 map("", "<A-z>", exec("set wrap!"))
 
-map("", "<F5>", exec("LspRestart"))
-
-map("", "<leader>l", require("lazy").home)
-
-map("", "<A-n>", exec("silent! cn"))
-map("", "<A-p>", exec("silent! cp"))
-
-map("", "gd", '<C-]>')
+map("", "gd", "<C-]>")

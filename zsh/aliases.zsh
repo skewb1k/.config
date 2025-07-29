@@ -1,17 +1,7 @@
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias ~="cd ~"
-
-if command -v eza >/dev/null 2>&1; then
-	alias l="eza --icons"
-	alias la="eza -a --icons"
-	alias lt="eza -T --icons"
-	alias lta="eza -aT --icons"
-fi
-
 alias python="python3"
 alias py="python3"
+
+alias ls="ls --color=auto"
 
 alias task="go-task"
 

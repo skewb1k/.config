@@ -9,8 +9,5 @@ return {
 		".golangci.yaml",
 		".golangci.toml",
 		".golangci.json",
-		"go.work",
-		"go.mod",
-		".git",
 	},
 }

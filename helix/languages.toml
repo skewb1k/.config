@@ -6,10 +6,10 @@ timeout = 5
 [language-server.clangd]
 command = 'clangd'
 args = [
-  '--function-arg-placeholders',
-  '--completion-style=detailed',
-  '--clang-tidy',
-  '--log=verbose',
+	'--function-arg-placeholders',
+	'--completion-style=detailed',
+	'--clang-tidy',
+	'--log=verbose',
 ]
 
 [language-server.biome]
@@ -20,27 +20,27 @@ args = ["lsp-proxy"]
 command = "/home/skewbik/dev/seriousbiz/flowtemplates/flow-cli/.out/flow"
 args = ["lsp-proxy"]
 
-[language-server.gopls]
-command = "gopls"
+# [language-server.gopls]
+# command = "gopls"
 # config = { "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
-config = { "gofumpt" = true, "local" = "goimports", "completeFunctionCalls" = false }
+# config = { "gofumpt" = true, "local" = "goimports", "completeFunctionCalls" = false }
 
 [language-server.pylsp.config.pylsp]
 plugins.ruff.enabled = true
 plugins.isort.enabled = true
 
-[language-server.golangci-lint-lsp]
-command = "golangci-lint-langserver"
-
-[language-server.golangci-lint-lsp.config]
-command = [
-  "golangci-lint",
-  "run",
-  "--output.json.path",
-  "stdout",
-  "--show-stats=false",
-  "--issues-exit-code=1",
-]
+# [language-server.golangci-lint-lsp]
+# command = "golangci-lint-langserver"
+#
+# [language-server.golangci-lint-lsp.config]
+# command = [
+# 	"golangci-lint",
+# 	"run",
+# 	"--output.json.path",
+# 	"stdout",
+# 	"--show-stats=false",
+# 	"--issues-exit-code=1",
+# ]
 
 [[language]]
 name = 'cpp'
@@ -66,10 +66,10 @@ language-id = "flow"
 [[language]]
 name = "javascript"
 language-servers = [
-  { name = "typescript-language-server", except-features = [
-    "format",
-  ] },
-  "biome",
+	{ name = "typescript-language-server", except-features = [
+		"format",
+	] },
+	"biome",
 ]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
@@ -77,10 +77,10 @@ auto-format = true
 [[language]]
 name = "typescript"
 language-servers = [
-  { name = "typescript-language-server", except-features = [
-    "format",
-  ] },
-  "biome",
+	{ name = "typescript-language-server", except-features = [
+		"format",
+	] },
+	"biome",
 ]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
@@ -90,10 +90,10 @@ name = "tsx"
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 language-servers = [
-  { name = "typescript-language-server", except-features = [
-    "format",
-  ] },
-  "biome",
+	{ name = "typescript-language-server", except-features = [
+		"format",
+	] },
+	"biome",
 ]
 
 [[language]]
@@ -101,10 +101,10 @@ name = "jsx"
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 language-servers = [
-  { name = "typescript-language-server", except-features = [
-    "format",
-  ] },
-  "biome",
+	{ name = "typescript-language-server", except-features = [
+		"format",
+	] },
+	"biome",
 ]
 
 # [[language]]
@@ -121,11 +121,11 @@ language-servers = ["vscode-html-language-server", "tailwindcss-ls"]
 name = "css"
 language-servers = ["vscode-css-language-server", "tailwindcss-ls"]
 
-[[language]]
-name = "go"
-auto-format = true
-language-servers = ["gopls", "golangci-lint-lsp"]
-formatter = { command = "golangci-lint", args = ["fmt", "--stdin"] }
+# [[language]]
+# name = "go"
+# auto-format = true
+# language-servers = ["gopls", "golangci-lint-lsp"]
+# formatter = { command = "golangci-lint", args = ["fmt", "--stdin"] }
 
 
 [[language]]

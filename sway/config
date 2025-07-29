@@ -187,7 +187,7 @@ exec swaymsg "workspace 3; exec $term;"
 exec swaymsg "workspace 6; exec throne;"
 exec swaymsg "workspace 6; exec Telegram;"
 exec swaymsg "workspace 6; exec discord;"
-exec swaymsg "workspace 2; exec spotify;"
+# exec swaymsg "workspace 2; exec spotify;"
 
 exec swayidle -w \
 	timeout 900 'swaymsg "output * power off"' \

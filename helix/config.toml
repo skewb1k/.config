@@ -1,4 +1,4 @@
-theme = "vague"
+theme = "tokyonight"
 
 [editor]
 line-number = "relative"
