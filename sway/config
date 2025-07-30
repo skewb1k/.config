@@ -6,11 +6,11 @@ set $right l
 
 set $term foot
 
-# output eDP-1 mode 3072x1920@120Hz scale 1.5
+output eDP-1 mode 3072x1920@120Hz scale 1.5
 
-output eDP-1 disable
-output DP-2 mode 2560x1440@170Hz pos 0 0
-output HDMI-A-1 mode 1920x1080@75Hz transform 90 pos 2560,0
+# output eDP-1 disable
+# output DP-2 mode 2560x1440@170Hz pos 0 0
+# output HDMI-A-1 mode 1920x1080@75Hz transform 90 pos 2560,0
 
 workspace 1 output DP-2
 workspace 2 output DP-2

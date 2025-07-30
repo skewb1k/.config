@@ -12,6 +12,7 @@ return {
 		".git",
 	},
 	settings = {
+
 		Lua = {
 			telemetry = {
 				enable = false,

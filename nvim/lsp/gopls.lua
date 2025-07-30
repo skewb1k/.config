@@ -1,6 +1,6 @@
 return {
-	-- cmd = { "lsproxy", "gopls" },
-	cmd = { "gopls" },
+	cmd = { "lsproxy", "gopls" },
+	-- cmd = { "gopls" },
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 	root_markers = {
 		".git",

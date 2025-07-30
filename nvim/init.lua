@@ -5,7 +5,7 @@ require("config.keymaps")
 require("config.registers")
 
 vim.pack.add({
-	{ src = "https://github.com/vague2k/vague.nvim" },
+	-- { src = "https://github.com/vague2k/vague.nvim" },
 	{ src = "https://github.com/brenoprata10/nvim-highlight-colors" },
 	{ src = "https://github.com/echasnovski/mini.diff" },
 	{ src = "https://github.com/echasnovski/mini.move" },
@@ -15,6 +15,8 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 })
+
+vim.cmd("packadd vague.nvim")
 
 require("vague").setup({
 	italic = false,
@@ -58,20 +60,18 @@ require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
 })
 
-local diff = require("mini.diff")
-diff.setup({
+require("mini.diff").setup({
 	view = {
 		style = "sign",
 		signs = { add = "+", change = "~", delete = "_" },
 		priority = 1,
 	},
 })
-vim.keymap.set("n", "<leader>gd", diff.toggle_overlay)
+vim.keymap.set("", "<leader>gd", MiniDiff.toggle_overlay)
 
-local pick = require("mini.pick")
-pick.setup()
-vim.keymap.set("", "<leader>f", pick.builtin.files)
-vim.keymap.set("", "<leader>'", pick.builtin.resume)
+require("mini.pick").setup()
+vim.keymap.set("", "<leader>f", MiniPick.builtin.files)
+vim.keymap.set("", "<leader>'", MiniPick.builtin.resume)
 
 require("mini.move").setup()
 require("mini.trailspace").setup()
@@ -84,14 +84,17 @@ require("treesitter-context").setup({
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("my.lsp", {}),
-	callback = function(args)
-		local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+	callback = function(ev)
+		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+		-- vim.lsp.semantic_tokens.enable(false)
+		-- vim.lsp.semantic_tokens.force_refresh()
 		if client:supports_method("textDocument/completion") then
 			-- Optional: trigger autocompletion on EVERY keypress. May be slow!
 			-- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
 			-- client.server_capabilities.completionProvider.triggerCharacters = chars
-			vim.lsp.completion.enable(true, client.id, args.buf)
+			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
 		end
 	end,
 })
+
+vim.ui.select = MiniPick.ui_select

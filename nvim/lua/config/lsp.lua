@@ -8,8 +8,6 @@ vim.diagnostic.config({
 	},
 })
 
-vim.lsp.semantic_tokens.enable(false)
-
 vim.lsp.enable({
 	"gopls",
 	"lua_ls",

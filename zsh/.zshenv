@@ -18,8 +18,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
 export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 
-export TERM=xterm-256color
-
 export HISTFILE="$ZDOTDIR/.zhistory"
 export HISTSIZE=20000
 export SAVEHIST=20000
