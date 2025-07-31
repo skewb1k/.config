@@ -31,6 +31,8 @@ end)
 
 map("", "<leader>u", exec("checktime"))
 
+map("", "<leader>l", exec("Lex"))
+
 map("", "<leader>e", vim.diagnostic.open_float)
 
 map("", "<A-z>", exec("set wrap!"))

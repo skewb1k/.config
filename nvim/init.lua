@@ -9,11 +9,13 @@ vim.pack.add({
 	{ src = "https://github.com/brenoprata10/nvim-highlight-colors" },
 	{ src = "https://github.com/echasnovski/mini.diff" },
 	{ src = "https://github.com/echasnovski/mini.move" },
+	{ src = "https://github.com/echasnovski/mini.extra" },
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/echasnovski/mini.trailspace" },
 	{ src = "https://github.com/kylechui/nvim-surround" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
+	{ src = "https://github.com/tpope/vim-fugitive" },
 })
 
 vim.cmd("packadd vague.nvim")
@@ -60,6 +62,7 @@ require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
 })
 
+require("mini.extra").setup()
 require("mini.diff").setup({
 	view = {
 		style = "sign",
@@ -69,7 +72,14 @@ require("mini.diff").setup({
 })
 vim.keymap.set("", "<leader>gd", MiniDiff.toggle_overlay)
 
-require("mini.pick").setup()
+local pick = require("mini.pick")
+pick.setup(
+	{
+		source = {
+			show = pick.default_show
+		},
+	}
+)
 vim.keymap.set("", "<leader>f", MiniPick.builtin.files)
 vim.keymap.set("", "<leader>'", MiniPick.builtin.resume)
 
@@ -86,8 +96,6 @@ require("treesitter-context").setup({
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
 		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-		-- vim.lsp.semantic_tokens.enable(false)
-		-- vim.lsp.semantic_tokens.force_refresh()
 		if client:supports_method("textDocument/completion") then
 			-- Optional: trigger autocompletion on EVERY keypress. May be slow!
 			-- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
