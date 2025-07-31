@@ -10,7 +10,8 @@ vim.diagnostic.config({
 
 vim.lsp.enable({
 	"gopls",
-	"lua_ls",
+	-- "lua_ls",
+	"emmylua_ls",
 	"rust_analyzer",
 	"biome",
 	"ts_ls",

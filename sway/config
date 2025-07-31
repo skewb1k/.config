@@ -100,9 +100,6 @@ workspace 10 output DP-2
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+f floating toggle
 
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
-
 # Resizing containers:
 mode "resize" {
     # left will shrink the containers width
@@ -176,18 +173,20 @@ bar {
 
 default_border none
 
-bindsym $mod+x exec playerctl -p spotify play-pause
+bindsym $mod+z exec playerctl -p spotify play-pause
 bindsym $mod+c exec playerctl -p spotify next
+bindsym $mod+a exec playerctl -p spotify volume 0.05+
+bindsym $mod+x exec playerctl -p spotify volume 0.05-
 
 bindsym $mod+F8 exec hyprpicker
 
 # autostart
 exec swaymsg "workspace 1; exec zen-browser;"
 exec swaymsg "workspace 3; exec $term;"
+exec swaymsg "workspace 4; exec thunderbird;"
 exec swaymsg "workspace 6; exec throne;"
 exec swaymsg "workspace 6; exec Telegram;"
 exec swaymsg "workspace 6; exec discord;"
-# exec swaymsg "workspace 2; exec spotify;"
 
 exec swayidle -w \
 	timeout 900 'swaymsg "output * power off"' \

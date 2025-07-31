@@ -9,11 +9,6 @@ end
 map("n", "<Esc>", exec("nohlsearch"))
 map("t", "<Esc><Esc>", "<C-\\><C-n>")
 
-map("", "<C-h>", "<C-w><C-h>")
-map("", "<C-l>", "<C-w><C-l>")
-map("", "<C-j>", "<C-w><C-j>")
-map("", "<C-k>", "<C-w><C-k>")
-
 map("", "<C-M-h>", exec("vertical resize -2"))
 map("", "<C-M-l>", exec("vertical resize +2"))
 map("", "<C-M-j>", exec("resize +2"))
@@ -31,7 +26,7 @@ end)
 
 map("", "<leader>u", exec("checktime"))
 
-map("", "<leader>e", vim.diagnostic.open_float)
+map("", "<leader>l", exec("Lex"))
 
 map("", "<A-z>", exec("set wrap!"))
 

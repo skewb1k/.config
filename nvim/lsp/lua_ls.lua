@@ -1,5 +1,5 @@
 return {
-	cmd = { "/home/skewb1k/dev/lua-language-server/bin/lua-language-server" },
+	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
 	root_markers = {
 		".luarc.json",

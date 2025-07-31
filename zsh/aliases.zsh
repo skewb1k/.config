@@ -1,6 +1,5 @@
 alias python="python3"
 alias py="python3"
-
 alias ls="ls --color=auto"
 
 alias task="go-task"

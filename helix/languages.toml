@@ -16,9 +16,8 @@ args = [
 command = "biome"
 args = ["lsp-proxy"]
 
-[language-server.flow]
-command = "/home/skewbik/dev/seriousbiz/flowtemplates/flow-cli/.out/flow"
-args = ["lsp-proxy"]
+[language-server.rust-analyzer]
+command = "/home/skewb1k/dev/rust-analyzer/target/release/rust-analyzer"
 
 # [language-server.gopls]
 # command = "gopls"

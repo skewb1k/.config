@@ -2,14 +2,9 @@
 //! Source: https://github.com/skewb1k/dotfiles
 //! --------------------------------------------------
 {
-  // ========== Font ==========
-  // "editor.fontFamily": "FiraCode NF",
-  // "editor.fontFamily": "ITC Kabel Std",
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-  // "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.fontLigatures": false,
   "editor.fontSize": 14,
-  // "editor.fontWeight": "bold",
   "editor.fontVariations": true,
   // "editor.letterSpacing": 0.3,
   // ========== Terminal ==========
@@ -116,6 +111,12 @@
     "--config=.golangci.yml"
   ],
   "go.formatTool": "goimports",
+    // "rust-analyzer.trace.server": "verbose"
+    // "go.alternateTools": {
+        // "gopls":"/home/skewb1k/lsproxy/gopls"
+        // "gopls":"/home/skewb1k/.local/go/bin/gopls"
+    // },
+    // "go.trace.server": "verbose",
   "files.autoSave": "off",
   "editor.formatOnSave": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -265,6 +266,6 @@
   "biome.lsp.trace.server": "verbose",
   "go.testExplorer.concatenateMessages": false,
   "go.trace.server": "verbose",
-  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.typeCheckingMode": "standard"
   // "biome.lsp.bin":"/home/skewbik/dev/biome/target/debug/biome"
 }
